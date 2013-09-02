@@ -8,7 +8,7 @@ QT       += webkitwidgets core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = webBrowser3
+TARGET = spark56
 TEMPLATE = app
 
 

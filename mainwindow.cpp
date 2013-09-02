@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     viewer_->loadUrl(("http://www.spark56.com"));
     layout->addWidget(viewer_);
 
-    setWindowTitle(QStringLiteral("星火物流"));
+    setWindowTitle(QStringLiteral("星火物流V2.0"));
     setWindowIcon(QIcon(":/images/res/favicon.ico"));
     viewer_->setFocus();
     setCentralWidget(widget);
