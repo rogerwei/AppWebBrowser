@@ -4,12 +4,13 @@
 #
 #-------------------------------------------------
 
-QT       += webkitwidgets core gui
+QT       += webkitwidgets webkit  core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = spark56
 TEMPLATE = app
+CONFIG += qaxcontainer
 
 
 SOURCES += main.cpp\

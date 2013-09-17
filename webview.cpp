@@ -2,6 +2,9 @@
 #include "cookiejar.h"
 #include "networkaccessmanager.h"
 
+#include <QWebSecurityOrigin>
+#include <QWebFrame>
+
 QT_BEGIN_NAMESPACE
 
 WebView::WebView(QWidget *parent) :

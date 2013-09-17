@@ -15,8 +15,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void load();
 
 private:
+    QString getUrl();
+
     WebView* viewer_;
 };
 
