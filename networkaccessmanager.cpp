@@ -42,12 +42,7 @@
 #include "networkaccessmanager.h"
 
 #include <QtCore/QSettings>
-
-#include <QtGui/QDesktopServices>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QMessageBox>
-#include <QtWidgets/QStyle>
-#include <QtGui/QTextDocument>
+#include <QStandardPaths>
 
 #include <QtNetwork/QAuthenticator>
 #include <QtNetwork/QNetworkDiskCache>

@@ -19,6 +19,7 @@ public:
 
 private:
     QString getUrl();
+    void setShortCut();
 
     WebView* viewer_;
 };

@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = spark56
 TEMPLATE = app
-CONFIG += qaxcontainer
+CONFIG += axcontainer
 
 
 SOURCES += main.cpp\

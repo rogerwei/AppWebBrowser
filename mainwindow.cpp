@@ -2,10 +2,9 @@
 
 #include "webview.h"
 #include <QHBoxLayout>
-#include <QDir>
 #include <QDebug>
-#include <QNetworkProxyFactory>
 #include <QSettings>
+#include <QAction>
 #include <QCoreApplication>
 
 QT_BEGIN_NAMESPACE
@@ -20,15 +19,13 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget* widget = new QWidget(this);
     QHBoxLayout* layout = new QHBoxLayout(widget);
     layout->setMargin(1);
-
-    //viewer_->loadUrl(("http://www.spark56.com"));
-    //viewer_->loadUrl("http://v.youku.com/v_playlist/f16675792o1p1.html");
-    //viewer_->loadUrl("http://www.spark56.com/app/index.do");
     layout->addWidget(viewer_);
 
-    setWindowTitle(QStringLiteral("星火物流V2.0"));
+    setWindowTitle(QStringLiteral("星火物流V2.1"));
     setWindowIcon(QIcon(":/images/res/favicon.ico"));
     viewer_->setFocus();
+
+    setShortCut();
     setCentralWidget(widget);
     showMaximized();
 }
@@ -40,8 +37,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::load()
 {
-    QString url = getUrl();
-    viewer_->loadUrl(url);
+    viewer_->loadUrl("http://www.spark56.com/app/login.do");
 }
 
 const QString appGroup = "app";
@@ -56,4 +52,11 @@ QString MainWindow::getUrl()
     return url;
 }
 
+void MainWindow::setShortCut()
+{
+    QAction* action = new QAction(parent());
+    action->setShortcut(QKeySequence::Refresh);
+    connect(action, SIGNAL(triggered()), viewer_, SLOT(reload()));
+    this->addAction(action);
+}
 QT_END_NAMESPACE

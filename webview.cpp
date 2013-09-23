@@ -2,9 +2,6 @@
 #include "cookiejar.h"
 #include "networkaccessmanager.h"
 
-#include <QWebSecurityOrigin>
-#include <QWebFrame>
-
 QT_BEGIN_NAMESPACE
 
 WebView::WebView(QWidget *parent) :
@@ -15,6 +12,9 @@ WebView::WebView(QWidget *parent) :
     s_networkAccessManager->setCookieJar(new CookieJar);
     m_webPage->setNetworkAccessManager(s_networkAccessManager);
     setPage(m_webPage);
+
+    //forbidden system menu
+    setContextMenuPolicy(Qt::CustomContextMenu);
 }
 
 void WebView::loadUrl(const QString &url)
